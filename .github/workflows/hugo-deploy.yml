@@ -46,14 +46,29 @@ jobs:
       - name: Build Hugo site
         run: hugo --minify
 
+      - name: Check public directory
+        run: |
+          if [ -z "$(ls -A ./public 2>/dev/null)" ]; then
+            echo "Error: Public directory is empty or doesn't exist!"
+            mkdir -p ./public
+            echo "<html><body><h1>Placeholder</h1></body></html>" > ./public/index.html
+            echo "Created placeholder file to prevent empty artifact"
+          else
+            echo "Public directory contains:"
+            ls -la ./public
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
+          name: github-pages
 
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v2
+        uses: actions/deploy-pages@v3
+        with:
+          artifact_name: github-pages
