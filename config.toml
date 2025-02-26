@@ -1,6 +1,6 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://abu-matterize.github.io/sample-web/"
 languageCode = "en-us"
-title = "My New Hugo Site"
+title = "Sample Website"
 theme = "ash"
 
 [markup]
