@@ -1,0 +1,70 @@
+<!-- layouts/partials/hero.html -->
+<div class="relative" id="home">
+    <!-- Background Gradient -->
+    <div aria-hidden="true" class="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+        <div class="blur-[106px] h-56 bg-gradient-to-br from-primary to-purple-400 dark:from-blue-700"></div>
+        <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="container mx-auto px-4">
+        <div class="relative pt-36 ml-auto">
+            <!-- Cal floating-popup embed code begins -->
+            <script type="text/javascript">
+                (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if (typeof namespace === "string") { cal.ns[namespace] = cal.ns[namespace] || api; p(cal.ns[namespace], ar); p(cal, ["initNamespace", namespace]); } else p(cal, ar); return; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+                Cal("init", "secret", { origin: "https://cal.com" });
+
+                Cal.ns.secret("floatingButton", { "calLink": "askar-ali-e5ijt2/secret", "config": { "layout": "month_view" }, "buttonPosition": "top-right", "buttonColor": "#f20000" });
+                Cal.ns.secret("ui", { "hideEventTypeDetails": false, "layout": "month_view" });
+            </script>
+            <!-- Cal floating-popup embed code ends -->
+            <div class="lg:w-2/3 text-center mx-auto">
+                <!-- Heading -->
+                <h1 class="text-gray-900 text-balance dark:text-white font-bold text-5xl md:text-6xl xl:text-7xl">
+                    Shaping a world with <span class="text-primary dark:text-white">reimagination.</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="mt-8 text-gray-700 dark:text-gray-300">
+                    Odio incidunt nam itaque sed eius modi error totam sit illum. Voluptas doloribus asperiores quaerat
+                    aperiam. Quidem harum omnis beatae ipsum soluta!
+                </p>
+
+                <!-- Buttons -->
+                <div class="mt-16 flex flex-wrap justify-center gap-y-4 gap-x-6">
+                    <a href="javascript:void(0)"
+                        class="relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:bg-primary before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                        data-cal-link="askar-ali-e5ijt2/secret" data-cal-namespace="secret"
+                        data-cal-config='{"layout":"month_view"}'>
+                        <span class="relative text-base font-semibold text-white">Get started</span>
+                    </a>
+                </div>
+
+                <!-- Stats Section -->
+                <div class="hidden py-8 mt-16 border-y border-gray-100 dark:border-gray-800 sm:flex justify-between">
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The lowest price</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The fastest on the market</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                    <div class="text-left">
+                        <h6 class="text-lg font-semibold text-gray-700 dark:text-white">The most loved</h6>
+                        <p class="mt-2 text-gray-500">Some text here</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Client Logos -->
+            <div class="mt-12 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6">
+                {{ range .Site.Params.clients }}
+                <div class="p-4 grayscale transition duration-200 hover:grayscale-0">
+                    <img src="{{ .logo }}" class="h-12 w-auto mx-auto" loading="lazy" alt="{{ .name }} logo" />
+                </div>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</div>

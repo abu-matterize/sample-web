@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" data-theme="dark" lang="{{ .Site.LanguageCode | default "en" }}">
+    {{- partial "head.html" . -}}
+    <body class="bg-white dark:bg-gray-950">
+        {{- partial "header.html" . -}}
+        <main id="content" class="mb-4" aria-label="Main content">
+            {{ if .IsHome }}
+            {{ partial "hero.html" . }}
+            {{ partial "features.html" . }}
+            {{ partial "solution.html" . }}
+            {{ partial "reviews.html" . }}
+            {{ partial "blog.html" . }}
+            {{ partial "cal-modal.html" . }}
+        {{ end }}
+            {{- block "main" . }}
+            {{- end }}
+        </main>
+        {{- partial "footer.html" . -}}
+    </body>
+</html>

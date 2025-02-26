@@ -1,0 +1,63 @@
+<!-- layouts/partials/footer.html -->
+<footer class="py-20 md:py-40">
+    <div class="container mx-auto px-4">
+        <div class="m-auto md:w-10/12 lg:w-8/12 xl:w-6/12">
+            <div class="flex flex-wrap items-center justify-between md:flex-nowrap">
+                <!-- Left Section: Links -->
+                <div class="flex w-full justify-center space-x-12 text-gray-600 dark:text-gray-300 sm:w-7/12 md:justify-start">
+                    <!-- First Column: Home, About, Guide, etc. -->
+                    <ul class="list-inside list-disc space-y-8">
+                        {{ range .Site.Menus.footer_left }}
+                            <li>
+                                <a href="{{ .URL }}" class="transition hover:text-primary">{{ .Name }}</a>
+                            </li>
+                        {{ end }}
+                    </ul>
+
+                    <!-- Second Column: Social Links -->
+                    <ul role="list" class="space-y-8">
+                        {{ range .Site.Menus.footer_social }}
+                            <li>
+                                <a href="{{ .URL }}" class="flex items-center space-x-3 transition hover:text-primary">
+                                    {{ if .Pre }}
+                                        {{ .Pre | safeHTML }}
+                                    {{ end }}
+                                    <span>{{ .Name }}</span>
+                                </a>
+                            </li>
+                        {{ end }}
+                    </ul>
+                </div>
+
+                <!-- Right Section: Description, Copyright, and Legal Links -->
+                <div class="m-auto mt-16 w-10/12 space-y-6 text-center sm:mt-auto sm:w-5/12 sm:text-left">
+                    <!-- Description -->
+                    <span class="block text-gray-500 dark:text-gray-400">
+                        {{ .Site.Params.footer_description | default "We change the way UI components libraries are used" }}
+                    </span>
+
+                    <!-- Copyright -->
+                    <span class="block text-gray-500 dark:text-gray-400">
+                        {{ .Site.Params.footer_copyright | default "Tailus Blocks" }} &copy; <span id="year"></span>
+                    </span>
+
+                    <!-- Legal Links -->
+                    <span class="flex justify-between text-gray-600 dark:text-white">
+                        <a href="{{ .Site.Params.footer_terms_url | default '#' }}" class="font-medium">Terms of Use</a>
+                        <a href="{{ .Site.Params.footer_privacy_url | default '#' }}" class="font-medium">Privacy Policy</a>
+                    </span>
+
+                    <!-- Contact Link -->
+                    <span class="block text-gray-500 dark:text-gray-400">
+                        Need help? <a href="{{ .Site.Params.footer_contact_url | default '#' }}" class="font-semibold text-gray-600 dark:text-white">Contact Us</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Script to update the year dynamically -->
+<script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
