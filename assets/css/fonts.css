@@ -1,0 +1,11 @@
+
+/* CerebriSans Font */
+@font-face {
+  font-family: 'Cerebri Sans';
+  src: url('/fonts/CerebriSans-Book.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* You can add more @font-face declarations as needed */

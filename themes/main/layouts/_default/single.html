@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="container py-12">
+    <article>
+        <h1 class="text-4xl font-bold font-heading mb-6">{{ .Title }}</h1>
+        {{ if .Params.date }}
+        <time class="text-sm text-gray-500 mb-8 block">{{ .Date.Format "January 2, 2006" }}</time>
+        {{ end }}
+        <div class="prose max-w-none">
+            {{ .Content }}
+        </div>
+    </article>
+</div>
+{{ end }}

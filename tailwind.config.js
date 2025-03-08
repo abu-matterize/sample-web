@@ -1,15 +1,26 @@
 /** @type {import('tailwindcss').Config} */
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
-    "./layouts/**/*.html",
-    "./content/**/*.{html,md}",
-    "./themes/ash/layouts/**/*.html"
+    "./themes/main/layouts/**/*.html",
+    "./content/**/*.md",
+    "./content/**/*.html"
   ],
   theme: {
     extend: {
+      display: ['group-hover'],
+      colors: {
+        primary: '#2F45FF',
+        secondary: '#ffed4a',
+        dark: '#2d3748',
+        light: '#f7fafc'
+      },
       fontFamily: {
-        sans: ['Urbanist', 'sans-serif'],
-      }
+        sans: ['Cerebri Sans', ...defaultTheme.fontFamily.sans],
+        heading: ['Cerebri Sans', 'sans-serif'],
+        cerebri: ['Cerebri Sans', 'sans-serif'],
+      },
     },
   },
   plugins: [],

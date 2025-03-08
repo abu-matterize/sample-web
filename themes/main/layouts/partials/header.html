@@ -1,0 +1,81 @@
+<header class="bg-white shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 lg:px-12 flex justify-between items-center py-4">
+        <a href="{{ .Site.Home.RelPermalink }}" class="text-2xl font-bold text-gray-900">Matterize Labs</a>
+        <nav class="hidden md:flex items-center space-x-8">
+            <!-- Service Dropdown -->
+            <div class="relative group">
+                <!-- Service Button -->
+                <button class="text-gray-700 hover:text-black font-medium focus:outline-none">Service</button>
+                <!-- Dropdown Menu -->
+                <div class="absolute hidden group-hover:block bg-white shadow-lg rounded-md mt-2 py-2 w-48">
+                    <a href="/service/option1" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 1</a>
+                    <a href="/service/option2" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 2</a>
+                    <a href="/service/option3" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 3</a>
+                    <a href="/service/option4" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Option 4</a>
+                </div>
+            </div>
+            <!-- Other Links -->
+            <a href="/certified-devices/" class="text-gray-700 hover:text-black font-medium">Certified Devices</a>
+            <a href="/case-studies/" class="text-gray-700 hover:text-black font-medium">Case Studies</a>
+            <a href="/blog/" class="text-gray-700 hover:text-black font-medium">Blog</a>
+            <a href="/about-us/" class="text-gray-700 hover:text-black font-medium">About Us</a>
+        </nav>
+        <a href="#" class="px-3 btn bg-blue-600 text-white rounded-xl text-sm font-medium shadow-lg hover:bg-blue-700 transition">
+            <span style="margin-right: 10px;">
+                Start Your Project
+            </span>
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M13.4625 13.75C11.9 13.75 10.3563 13.4094 8.83125 12.7281C7.30625 12.0469 5.91875 11.0813 4.66875 9.83125C3.41875 8.58125 2.45312 7.19375 1.77188 5.66875C1.09063 4.14375 0.75 2.6 0.75 1.0375C0.75 0.8125 0.825 0.625 0.975 0.475C1.125 0.325 1.3125 0.25 1.5375 0.25H4.575C4.75 0.25 4.90625 0.309375 5.04375 0.428125C5.18125 0.546875 5.2625 0.6875 5.2875 0.85L5.775 3.475C5.8 3.675 5.79375 3.84375 5.75625 3.98125C5.71875 4.11875 5.65 4.2375 5.55 4.3375L3.73125 6.175C3.98125 6.6375 4.27812 7.08437 4.62187 7.51562C4.96562 7.94688 5.34375 8.3625 5.75625 8.7625C6.14375 9.15 6.55 9.50938 6.975 9.84063C7.4 10.1719 7.85 10.475 8.325 10.75L10.0875 8.9875C10.2 8.875 10.3469 8.79062 10.5281 8.73438C10.7094 8.67813 10.8875 8.6625 11.0625 8.6875L13.65 9.2125C13.825 9.2625 13.9688 9.35312 14.0812 9.48438C14.1937 9.61563 14.25 9.7625 14.25 9.925V12.9625C14.25 13.1875 14.175 13.375 14.025 13.525C13.875 13.675 13.6875 13.75 13.4625 13.75Z" fill="white"/>
+            </svg>
+        </a>
+        <button id="mobile-menu-button" class="md:hidden text-gray-700 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+        <div class="relative">
+            <button id="mobile-services-button"
+                class="w-full text-left px-6 py-3 text-gray-700 hover:bg-gray-100 flex justify-between">
+                <span>Services</span>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" id="mobile-services-icon"
+                    viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06-.02L10 10.72l3.71-3.53a.75.75 0 111.06 1.06l-4.24 4.04a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01-.02-1.06z"
+                        clip-rule="evenodd" />
+                </svg>
+            </button>
+        </div>
+        <a href="/certified-devices/" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Certified Devices</a>
+        <a href="/case-studies/" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Case Studies</a>
+        <a href="/blog/" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">Blog</a>
+        <a href="/about-us/" class="block px-6 py-3 text-gray-700 hover:bg-gray-100">About Us</a>
+        <a href="/start-project" class="block px-6 py-3 text-white bg-blue-600 hover:bg-blue-700 text-center">Start Your
+            Project</a>
+    </div>
+
+    <!-- Scripts for Dropdown & Mobile Menu -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Desktop services dropdown
+            const desktopButton = document.getElementById("desktop-services-button");
+            const desktopDropdown = document.getElementById("desktop-services-dropdown");
+            desktopButton.addEventListener("mouseover", () => {
+                desktopDropdown.classList.remove("hidden", "opacity-0", "invisible");
+            });
+            desktopDropdown.addEventListener("mouseleave", () => {
+                desktopDropdown.classList.add("opacity-0", "invisible");
+                setTimeout(() => desktopDropdown.classList.add("hidden"), 200);
+            });
+            document.getElementById("mobile-menu-button").addEventListener("click", function () {
+                document.getElementById("mobile-menu").classList.toggle("hidden");
+            });
+            document.getElementById("mobile-services-button").addEventListener("click", function () {
+                document.getElementById("mobile-services-dropdown").classList.toggle("hidden");
+                document.getElementById("mobile-services-icon").classList.toggle("rotate-180");
+            });
+        });
+    </script>
+</header>

@@ -1,18 +1,16 @@
 {
-  "name": "hugo-tailwind-site",
+  "name": "hugo-site",
   "version": "1.0.0",
-  "description": "Hugo site with Tailwind CSS",
+  "description": "Professional Hugo site with Tailwind CSS",
   "scripts": {
-    "dev": "concurrently npm:watch:*",
-    "watch:tw": "cp ./assets/css/main.css ./static/css/styles.css",
-    "watch:hugo": "hugo server",
-    "build": "cp ./assets/css/main.css ./static/css/styles.css && hugo --minify"
+    "dev": "hugo server",
+    "build": "hugo",
+    "build:tailwind": "tailwindcss -i ./themes/main/assets/css/main.css -o ./themes/main/assets/css/style.css",
+    "watch:tailwind": "tailwindcss -i ./themes/main/assets/css/main.css -o ./themes/main/assets/css/style.css --watch"
   },
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^10.4.14",
-    "concurrently": "^8.0.1",
     "postcss": "^8.4.23",
-    "postcss-cli": "^10.1.0",
     "tailwindcss": "^3.3.2"
   }
 }

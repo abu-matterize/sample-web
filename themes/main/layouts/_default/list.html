@@ -1,0 +1,19 @@
+{{ define "main" }}
+<div class="container py-12">
+    <h1 class="text-4xl font-bold font-heading mb-10">{{ .Title }}</h1>
+    <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {{ range .Pages }}
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold mb-3">
+                <a href="{{ .Permalink }}" class="hover:text-primary">{{ .Title }}</a>
+            </h2>
+            {{ if .Params.date }}
+            <time class="text-sm text-gray-500 mb-3 block">{{ .Date.Format "January 2, 2006" }}</time>
+            {{ end }}
+            <p class="text-gray-600 mb-4">{{ .Summary }}</p>
+            <a href="{{ .Permalink }}" class="text-primary font-medium hover:underline">Read more →</a>
+        </div>
+        {{ end }}
+    </div>
+</div>
+{{ end }}
