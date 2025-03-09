@@ -1,6 +1,6 @@
-baseURL = 'https://example.com/'
+baseURL = 'https://matterize.io/'
 languageCode = 'en-us'
-title = 'My Professional Hugo Site'
+title = 'Matterize Labs - Your Matter Smart Home Development Partner'
 theme = 'main'
 
 # Enable Hugo Pipes processing
